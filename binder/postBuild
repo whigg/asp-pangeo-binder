@@ -1,0 +1,26 @@
+#!/bin/bash
+jupyter serverextension enable --py nbserverproxy --sys-prefix
+jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+                             @jupyterlab/hub-extension@0.12 \
+                             @pyviz/jupyterlab_pyviz \
+                             jupyter-leaflet
+
+# Latest Dask extension w/ server controls
+git clone --single-branch -b serverextension https://github.com/ian-r-rose/dask-labextension.git
+cd dask-labextension
+npm install   # Install npm package dependencies
+npm run build  # Compile the TypeScript sources to Javascript
+jupyter labextension install  # Install the current directory as an extension
+
+pip install -e .
+jupyter serverextension enable --sys-prefix dask_labextension
+
+# Install Ames stereo pipeline in home folder
+VERSION=StereoPipeline-2.6.1-2019-01-22-x86_64-Linux
+wget https://byss.arc.nasa.gov/stereopipeline/daily_build/$VERSION.tar.bz2
+tar -vxjf $VERSION.tar.bz2
+mv $VERSION /home/jovyan/StereoPipeline
+rm $VERSION.tar.bz2
+export PATH=/home/jovyan/StereoPipeline/bin:${PATH}
+
+#EOF
