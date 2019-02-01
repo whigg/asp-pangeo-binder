@@ -30,4 +30,4 @@ dependencies:
   - dask-kubernetes=0.7
   - rasterio=1.0
   - pip:
-    - wurlizter
+    - wurlitzer
