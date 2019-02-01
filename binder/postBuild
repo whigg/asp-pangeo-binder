@@ -17,10 +17,12 @@ jupyter serverextension enable --sys-prefix dask_labextension
 
 # Install Ames stereo pipeline in home folder
 VERSION=StereoPipeline-2.6.1-2019-01-22-x86_64-Linux
-wget https://byss.arc.nasa.gov/stereopipeline/daily_build/$VERSION.tar.bz2
-tar -vxjf $VERSION.tar.bz2
+wget -q https://byss.arc.nasa.gov/stereopipeline/daily_build/$VERSION.tar.bz2
+tar -xjf $VERSION.tar.bz2
 mv $VERSION /home/jovyan/StereoPipeline
 rm $VERSION.tar.bz2
-export PATH=/home/jovyan/StereoPipeline/bin:${PATH}
+
+# doesn't work, need to set at beginning of notebook
+#export PATH=/home/jovyan/StereoPipeline/bin:${PATH}
 
 #EOF
