@@ -22,9 +22,12 @@ dependencies:
   - libgdal=2.4
   - boto3=1.9
   - hvplot=0.4
+  - geoviews=1.6
   - datashader=0.6
   - requests=2.21
   - pandas=0.23
   - geopandas=0.4
   - dask-kubernetes=0.7
   - rasterio=1.0
+  - pip:
+    - wurlizter
