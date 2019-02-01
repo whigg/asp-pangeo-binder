@@ -27,7 +27,7 @@ dependencies:
   - requests=2.21
   - pandas=0.23
   - geopandas=0.4
-  - dask-kubernetes=0.7
+  - dask-kubernetes=0.6
   - rasterio=1.0
   - pip:
     - wurlitzer
