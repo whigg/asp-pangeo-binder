@@ -4,7 +4,7 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38 \
                              @jupyterlab/hub-extension@0.12 \
                              @pyviz/jupyterlab_pyviz@0.6.4 \
                              jupyter-leaflet@0.10.0 \
-                             dask-labextension@0.3.1
+                             dask-labextension
 
 # Install Ames stereo pipeline in home folder
 VERSION=StereoPipeline-2.6.1-2019-03-24-x86_64-Linux
